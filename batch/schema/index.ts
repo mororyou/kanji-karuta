@@ -2,6 +2,7 @@ import { z } from 'zod';
 
 // 学年
 export const zGrader = z.number().min(1).max(6);
+export type Grader = z.infer<typeof zGrader>;
 
 // ファイルパスと学年
 export const zFileSchema = z.object({
