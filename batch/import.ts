@@ -3,7 +3,7 @@ import { match } from 'ts-pattern';
 import { fileURLToPath } from 'url';
 import type { FileSchema } from './schema';
 import { graderPattern } from './utils/grader-pattern';
-import { deleteKanjiRecords, insertKanjiRecords } from './utils/query';
+import { insertKanjiRecords } from './utils/query';
 import { readCsv } from './utils/read-csv';
 
 const args = process.argv.slice(2);
@@ -28,8 +28,7 @@ const importBatch = async (args: string[]) => {
     // read csv file
     const kanjiData = await readCsv(grader);
 
-    // Delete records for the specified grade
-    await deleteKanjiRecords(grader.grader);
+    // Todo: Delete records for the specified grade
 
     // Insert records for the specified grade
     await insertKanjiRecords(kanjiData);
