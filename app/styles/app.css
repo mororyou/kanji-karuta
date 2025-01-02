@@ -75,3 +75,22 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* WebFont */
+.kiwi-maru-light {
+  font-family: 'Kiwi Maru', serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kiwi-maru-regular {
+  font-family: 'Kiwi Maru', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kiwi-maru-medium {
+  font-family: 'Kiwi Maru', serif;
+  font-weight: 500;
+  font-style: normal;
+}
