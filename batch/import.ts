@@ -3,7 +3,7 @@ import { match } from 'ts-pattern';
 import { fileURLToPath } from 'url';
 import type { FileSchema } from './schema';
 import { graderPattern } from './utils/grader-pattern';
-import { deleteKanjiRecords } from './utils/query/delete';
+import { deleteKanjiRecords, insertKanjiRecords } from './utils/query';
 import { readCsv } from './utils/read-csv';
 
 const args = process.argv.slice(2);
@@ -23,13 +23,19 @@ const importBatch = async (args: string[]) => {
       throw new Error('Invalid grade');
     });
 
-  const kanjiData = await readCsv(grader);
+  // TODO: never throws
+  try {
+    // read csv file
+    const kanjiData = await readCsv(grader);
 
-  // Delete records for the specified grade
-  await deleteKanjiRecords(grader.grader);
+    // Delete records for the specified grade
+    await deleteKanjiRecords(grader.grader);
 
-  // Insert records for the specified grade
-  // await insertKanjiRecords(kanjiData);
+    // Insert records for the specified grade
+    await insertKanjiRecords(kanjiData);
+  } catch (error) {
+    console.log('error -> ', error);
+  }
 };
 
 importBatch(args);

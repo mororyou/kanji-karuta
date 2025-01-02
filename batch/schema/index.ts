@@ -19,4 +19,4 @@ export const zKanjiSchema = z.object({
   kun_reading: z.string().max(255).nullable(),
   grade: zGrader,
 });
-export type Kanji = z.infer<typeof zKanjiSchema>;
+export type KanjiSchema = z.infer<typeof zKanjiSchema>;
