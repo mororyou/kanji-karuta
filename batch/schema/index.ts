@@ -15,8 +15,8 @@ export type FileSchema = z.infer<typeof zFileSchema>;
 export const zKanjiSchema = z.object({
   character: z.string().length(1),
   number_of_strokes: z.number(),
-  onReading: z.string().max(255).nullable(),
-  kunReading: z.string().max(255).nullable(),
+  on_reading: z.string().max(255).nullable(),
+  kun_reading: z.string().max(255).nullable(),
   grade: zGrader,
 });
 export type Kanji = z.infer<typeof zKanjiSchema>;
