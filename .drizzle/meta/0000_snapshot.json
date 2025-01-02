@@ -1,7 +1,7 @@
 {
   "version": "6",
   "dialect": "sqlite",
-  "id": "bfa71c96-71ca-4906-a476-a43c50ea632e",
+  "id": "0e24a7d9-9820-45a2-ad53-70777b15921d",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "kanjis": {
@@ -13,6 +13,13 @@
           "primaryKey": true,
           "notNull": true,
           "autoincrement": true
+        },
+        "strokes": {
+          "name": "strokes",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
         },
         "character": {
           "name": "character",

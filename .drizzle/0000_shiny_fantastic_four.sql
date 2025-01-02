@@ -1,5 +1,6 @@
 CREATE TABLE `kanjis` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
+	`strokes` integer,
 	`character` text(1),
 	`read` text(255) DEFAULT '',
 	`kun_read` text(255) DEFAULT '',
