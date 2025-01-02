@@ -11,8 +11,8 @@ export const readCsv = ({ filePath, grader }: ReadCsvProps) => {
     const parse = zKanjiSchema.parse({
       character: res[0],
       number_of_strokes: parseInt(res[1]),
-      onReading: res[2],
-      kunReading: res[3],
+      on_reading: res[2],
+      kun_reading: res[3],
       grade: grader,
     });
     return parse;
