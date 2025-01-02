@@ -56,9 +56,7 @@
       "indexes": {
         "kanjis_character_unique": {
           "name": "kanjis_character_unique",
-          "columns": [
-            "character"
-          ],
+          "columns": ["character"],
           "isUnique": true
         }
       },
